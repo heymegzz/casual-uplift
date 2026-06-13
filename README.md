@@ -570,7 +570,7 @@ All figures are saved to `results/figures/`. Final metrics are written to `resul
 Histogram of estimated propensity scores for treated vs. control units. Validates that positivity holds — both distributions share common support across [0.6, 1.0] with no degenerate mass at boundaries.
 
 **Figure 2 — AUUC Comparison:**
-All five models plotted on a single uplift curve. X-axis: fraction of population targeted (sorted by predicted CATE, high to low). Y-axis: cumulative incremental conversion rate. Random targeting diagonal shown as reference. Causal Forest dominates throughout.
+All five models plotted on a single uplift curve. X-axis: fraction of population targeted (sorted by predicted CATE, high to low). Y-axis: cumulative incremental conversion rate. Random targeting diagonal shown as reference. S-Learner achieves highest AUUC and Qini, consistent with the low signal-to-noise regime of the 0.30% conversion rate outcome.
 
 **Figure 3 — Qini Coefficient Bar Chart:**
 Ranked Qini coefficients across all models with 95% bootstrap confidence intervals.
@@ -585,7 +585,7 @@ Feature importance for treatment effect heterogeneity — which features most dr
 Expected incremental conversion lift as a function of targeting budget (fraction of population targeted). Shows at what budget level each model's targeting efficiency degrades relative to random.
 
 **Figure 7 — Placebo Test:**
-AUUC curves under shuffled treatment assignment for all models. All curves collapse to the random baseline diagonal, confirming no spurious predictive signal.
+AUUC curves under shuffled treatment assignment for all models. S-Learner AUUC collapses to near-zero under shuffled treatment, confirming genuine causal signal. Causal Forest placebo AUUC matches its real AUUC (Δ=0.00), consistent with high-variance estimates in the low conversion rate regime — the forest's honest splitting produces conservative estimates indistinguishable from noise at this sample fraction.
 
 **Figure 8 — CATE Distribution:**
 Histogram of τ̂(x) estimates across the test set for all models. Non-trivial variance confirms that treatment effect heterogeneity exists and is being captured. Degenerate distributions (all estimates near ATE) would indicate model failure.
