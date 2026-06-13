@@ -471,6 +471,9 @@ causal-uplift/
 │   ├── 05_evaluation.py            # End-to-end evaluation and figure generation
 │   └── 06_placebo_test.py          # Scientific validity check
 │
+├── notebooks/
+│   └── analysis.ipynb              # End-to-end results walkthrough with all figures
+│
 ├── results/
 │   ├── figures/
 │   │   ├── 01_propensity_overlap.png
