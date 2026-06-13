@@ -1,7 +1,11 @@
 env/
 data/*.csv
 data/*.gz
+data/*.csv.gz
 __pycache__/
 *.pyc
 .DS_Store
+*.pkl
+*.joblib
 results/*.pkl
+results/**/*.pkl
